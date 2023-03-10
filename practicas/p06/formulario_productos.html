@@ -7,75 +7,85 @@
 <body>
 	<h1>Registro de Productos</h1>
 	<form action="set_producto_v2.php" method="POST" onsubmit="return validarFormulario()">
-		<label for="nombre">Nombre:</label>
-		<input type="text" id="nombre" name="nombre"><br><br>
-		
-		<label for="marca">Marca:</label>
-		<input type="text" id="marca" name="marca"><br><br>
-		
-		<label for="modelo">Modelo:</label>
-		<input type="modelo" id="modelo" name="modelo"><br><br>
-		
-		<label for="precio">Precio:</label>
-		<input type="number" id="precio" name="precio"><br><br>
+	<label for="nombre">Nombre:</label>
+	<input type="text" id="nombre" name="nombre" required maxlength="100"><br><br>
+	
+	<label for="marca">Marca:</label>
+	<select type="text" id="marca" name="marca" required>
+		<option value="">Seleccione una opción</option>
+		<option value="Xiaomi">Xiaomi</option>
+		<option value="Samsung">Samsung</option>
+		<option value="Apple">Apple</option>
+		<option value="Huawei">Huawei</option>
+		<option value="OPPO">OPPO</option>
+		<option value="Honor">Honor</option>
+		<option value="POCO">POCO</option>
+	</select><br><br>
+	
+	<label for="modelo">Modelo:</label>
+	<input type="text" id="modelo" name="modelo" required maxlength="25"><br><br>
 
-        <label for="detalles">Detalles:</label>
-		<textarea id="detalles" name="detalles"></textarea><br><br>
+	<label for="precio">Precio:</label>
+	<input type="number" id="precio" name="precio" required min="100" step="0.01"><br><br>
 
-        <label for="unidades">Unidades:</label>
-		<input type="number" id="unidades" name="unidades"><br><br>
+	<label for="detalles">Detalles:</label>
+	<textarea id="detalles" name="detalles" maxlength="250"></textarea><br><br>
 
-        <label for="imagen">Imagen:</label>
-		<input type="text" id="imagen" name="imagen"><br><br>
-		
-		<input type="submit" value="Registrar">
-	</form>
+	<label for="unidades">Unidades:</label>
+	<input type="number" id="unidades" name="unidades" required min="0"><br><br>
 
-	<script>
-		function validarFormulario() {
-			var nombre = document.getElementById("nombre").value;
-			var marca = document.getElementById("marca").value;
-			var modelo = document.getElementById("modelo").value;
-			var precio = document.getElementById("precio").value;
-            var detalles = document.getElementById("detalles").value;
-            var unidades = document.getElementById("unidades").value;
-            var imagen = document.getElementById("imagen").value;
-			var errores = "";
+	<label for="imagen">Imagen:</label>
+	<input type="text" id="imagen" name="imagen"><br><br>
+	
+	<input type="submit" value="Registrar">
+</form>
 
-			if (nombre == "") {
-				errores += "- El nombre no puede estar vacío.\n";
-			}
+<script>
+	function validarFormulario() {
+		var nombre = document.getElementById("nombre").value;
+		var marca = document.getElementById("marca").value;
+		var modelo = document.getElementById("modelo").value;
+		var precio = document.getElementById("precio").value;
+		var detalles = document.getElementById("detalles").value;
+		var unidades = document.getElementById("unidades").value;
+		var imagen = document.getElementById("imagen");
+		var errores = "";
 
-			if (marca == "") {
-				errores += "- La descripción no puede estar vacía.\n";
-			}
-
-			if (modelo == "") {
-				errores += "- El modelo no puede estar vacío.\n";
-			}
-            if (precio == "") {
-				errores += "- El precio no puede estar vacío.\n";
-			} else if (isNaN(precio)) {
-				errores += "- El precio debe ser un número.\n";
-			}
-            if (detalles == "") {
-				errores += "- Los detalles no pueden estar vacíos.\n";
-			} 
-            if (unidades == "") {
-				errores += "- Las unidades no puede estar vacias.\n";
-			} else if (isNaN(unidades)) {
-				errores += "- Las unidades deben ser un número.\n";
-			}
-            if (imagen == "") {
-				errores += "- Faltan imagenes.\n";
-			} 
-			if (errores != "") {
-				alert("Por favor corrija los siguientes errores:\n" + errores);
-				return false;
-			}
-
-			return true;
+		if (nombre.length === 0 || nombre.length > 100) {
+			alert("El nombre debe tener entre 1 y 100 caracteres.");
+			return false;
 		}
-	</script>
-</body>
-</html>
+
+		if (marca === "") {
+			alert("Debe seleccionar una marca.");
+			return false;
+		}
+
+		if (modelo.length === 0 || modelo.length > 25) {
+			alert("El modelo debe tener entre 1 y 25 caracteres.");
+			return false;
+		}
+
+		if (precio <= 99.99) {
+			alert("El precio debe ser mayor a 99.99.");
+			return false;
+		}
+
+		if (detalles.length > 250) {
+			alert("Los detalles no pueden tener más de 250 caracteres.");
+			return false;
+		}
+
+		if (unidades < 0) {
+			alert("Las unidades no pueden ser negativas.");
+			return false;
+		}
+
+		imagen.defaultValue = "img/Imagen1.jpg";
+
+		return true;
+	}
+</script>
+
+	</body>
+	</html>
