@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo [
+    <!ELEMENT catalogo (usuarios, generos_pelicula, generos_programas, peliculas, programas)>
+    <!ELEMENT usuarios (user+)>
+    <!ELEMENT user (#PCDATA)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT generos_pelicula (genero+)>
+    <!ELEMENT genero (#PCDATA)>
+    <!ELEMENT generos_programas (genero+)>
+    <!ELEMENT programa (genero, title+)>
+    <!ELEMENT pelicula (genero, title+)>
+    <!ELEMENT peliculas (pelicula+)>
+    <!ELEMENT programas (programa+)>
+]>
+<catalogo>
+    <usuarios>
+        <user>Usuario1</user>
+        <user>Usuario2</user>
+    </usuarios>
+    
+    <generos_pelicula>
+        <genero>Animacion</genero>
+        <genero>Accion</genero>
+    </generos_pelicula>
+    
+    <generos_programas>
+        <genero>Documental</genero>
+        <genero>Comedia</genero>
+    </generos_programas>
+    
+    <peliculas>
+        <pelicula>
+            <genero>Animacion</genero>
+            <title>Super Mario Bros</title>
+        </pelicula>
+        <pelicula>
+            <genero>Animacion</genero>
+            <title>Rango</title>
+        </pelicula>
+        <pelicula>
+            <genero>Animacion</genero>
+            <title>MegaMente</title>
+        </pelicula>
+        <pelicula>
+            <genero>Animacion</genero>
+            <title>Spider-Man</title>
+        </pelicula>
+        <pelicula>
+            <genero>Comedia</genero>
+            <title>Norbit</title>
+        </pelicula>
+        <pelicula>
+            <genero>Comedia</genero>
+            <title>JoJo Rabbit</title>
+        </pelicula>
+        <pelicula>
+            <genero>Comedia</genero>
+            <title>Irene, yo y mi otro yo</title>
+        </pelicula>
+        <pelicula>
+            <genero>Comedia</genero>
+            <title>The truman show</title>
+        </pelicula>
+    </peliculas>
+    
+    <programas>
+        <programa>
+            <genero>Documental</genero>
+            <title>Planeta hostil</title>
+        </programa>
+        <programa>
+            <genero>Documental</genero>
+            <title>Cosmos: A Space-Time Odyssey</title>
+        </programa>
+        <programa>
+            <genero>Documental</genero>
+            <title>Oso polar</title>
+        </programa>
+        <programa>
+            <genero>Documental</genero>
+            <title>Human</title>
+        </programa>
+        <programa>
+            <genero>Comedia</genero>
+            <title>The Big Bang Theory</title>
+        </programa>
+        <programa>
+            <genero>Comedia</genero>
+            <title>Trabajo incognito</title>
+        </programa>
+        <programa>
+            <genero>Comedia</genero>
+            <title>La Casa de los dibujos</title>
+        </programa>
+        <programa>
+            <genero>Comedia</genero>
+            <title>Rick y Morty</title>
+        </programa>
+    </programas>
+   </catalogo>

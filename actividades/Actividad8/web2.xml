@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+    <users>
+        <user email="usuario1@gmail.com" profile="Nombre: Alan, Apellido: Viveros, Edad: 21"/>
+        <user email="usuario2@gmail.com" profile="Nombre: Arturo, Apellido: Nava, Edad: 10000"/>
+    </users>
+    
+    <generos_pelicula>
+        <genero nombre="Animacion"/>
+        <genero nombre="Accion"/>
+    </generos_pelicula>
+    
+    <generos_programas>
+        <genero nombre="Comedia"/>
+        <genero nombre="Documental"/>
+    </generos_programas>
+    
+    <peliculas>
+        <genero nombre="Animacion">
+            <title tiempo="130">MegaMente</title>
+            <title tiempo="130">Super Mario Bros Luigi</title>
+            <title tiempo="120">Demon Slayer</title>
+            <title tiempo="120">El dorado</title>
+        </genero>
+        <genero nombre="Accion">
+            <title tiempo="90">John Wick</title>
+            <title tiempo="135">black Panther  </title>
+            <title tiempo="180">Erase una vez en Hollywood</title>
+            <title tiempo="160">Top Gun Maverick</title>
+        </genero>
+    </peliculas>
+    <programas>
+        <genero nombre="Comedia">
+            <title tiempo="30">The Big Bang Theory</title>
+            <title tiempo="30">Trabajo Incogito</title>
+            <title tiempo="35">Rick y Morty</title>
+            <title tiempo="25">La casa de los dibujos</title>
+        </genero>
+        <genero nombre="Documental">
+            <title tiempo="110">Oso polar</title>
+            <title tiempo="59">Vuelo Estelar</title>
+            <title tiempo="120">Humans</title>
+            <title tiempo="59">Viajes a los limites del universo</title>
+        </genero>
+    </programas>
+</catalogo>
